@@ -1,22 +1,29 @@
 package eway.vertx.example.eway_vertx_example.model;
 
-public class Candidate {
-  String candidateId;
-  String name;
-  long votes;
+import java.util.concurrent.atomic.AtomicInteger;
 
-  public Candidate(String candidateId, String name, long votes) {
-    this.candidateId = candidateId;
+public class Candidate {
+  String id;
+  String name;
+  AtomicInteger votes;
+
+  public Candidate(String name, AtomicInteger votes) {
     this.name = name;
     this.votes = votes;
   }
 
-  public String getCandidateId() {
-    return candidateId;
+  public Candidate(String id, String name, AtomicInteger votes) {
+    this.id = id;
+    this.name = name;
+    this.votes = votes;
   }
 
-  public void setCandidateId(String candidateId) {
-    this.candidateId = candidateId;
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
   public String getName() {
@@ -27,11 +34,11 @@ public class Candidate {
     this.name = name;
   }
 
-  public long getVotes() {
+  public AtomicInteger getVotes() {
     return votes;
   }
 
-  public void setVotes(long votes) {
+  public void setVotes(AtomicInteger votes) {
     this.votes = votes;
   }
 }
